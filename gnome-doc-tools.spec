@@ -22,7 +22,7 @@ necessary for creating documentation for GNOME.
 %setup -q
 
 %build
-%configure
+%configure2_13
 perl -pi -e "s@/usr/lib/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docbook/dsssl-stylesheets/@g" *.dsl
 
 %install
