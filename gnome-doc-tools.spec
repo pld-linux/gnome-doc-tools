@@ -1,22 +1,28 @@
 Summary:	Extra tools for GDP members
+Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
 Name:		gnome-doc-tools
 Version:	1.0
 Release:	1
 License:	2000 Red Hat, Inc.
-Prereq:		sgml-common
-Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(pl):	Aplikacje/Tekst
+Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
+URL:		http://people.redhat.com/dcm/software.html
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	docbook-gnome-dtd10-sgml
+Prereq:		sgml-common
 Requires:	docbook-dtd31-sgml
 Requires:	docbook-dtd30-sgml
+Obsoletes:	docbook-gnome-dtd10-sgml
 
 %description
 The GNOME Documentation Project has a few tools, scripts and files
 necessary for creating documentation for GNOME.
+
+%description -l pl
+GNOME Documentation Project ma kilka narzêdzi, skryptów i plików
+potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %prep
 %setup -q
@@ -40,7 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun
 /usr/bin/install-catalog --remove /etc/sgml/gnome-customization-%{version}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
-
 
 %files
 %defattr(644,root,root,755)
