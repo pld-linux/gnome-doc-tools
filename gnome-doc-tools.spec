@@ -45,7 +45,7 @@ install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customiz
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%triggerpostun -- %{name} < 1.0-3
+%triggerpostun -- %{name} < 1.0-4
 if ! grep -q /etc/sgml/gnome-customization-%{version}-%{release}.cat /etc/sgml/catalog ; then
 	/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
 fi
