@@ -2,16 +2,18 @@ Summary:	Extra tools for GDP members
 Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
 Name:		gnome-doc-tools
 Version:	1.0
-Release:	1
-License:	2000 Red Hat, Inc.
+Release:	2
+License:	GPL
 Group:		Applications/Text
 Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
 URL:		http://people.redhat.com/dcm/software.html
-BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Prereq:		sgml-common
+BuildRequires:	autoconf
+BuildRequires:	automake
 Requires:	docbook-dtd31-sgml
 Requires:	docbook-dtd30-sgml
+Prereq:		sgml-common
+BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	docbook-gnome-dtd10-sgml
 
 %description
@@ -26,7 +28,11 @@ potrzebnych do tworzenia dokumentacji dla GNOME.
 %setup -q
 
 %build
-%configure2_13
+rm -f missing
+aclocal
+autoconf
+automake -a -c -f
+%configure
 perl -pi -e "s@%{_libdir}/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docbook/dsssl-stylesheets/@g" *.dsl
 
 %install
