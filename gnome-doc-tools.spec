@@ -27,14 +27,13 @@ perl -pi -e "s@/usr/lib/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docboo
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customization-%{version}
-install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customization-%{version}
 
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customization-%{version}
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
-
 
 %post
 /usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
