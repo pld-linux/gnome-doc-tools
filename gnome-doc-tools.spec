@@ -8,7 +8,9 @@ Group:		Applications/Text
 # dead
 #Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
 #URL:		http://people.redhat.com/dcm/software.html
-Source0:	ftp://freeware.sgi.com/source/gnome-doc-tools/gnome-doc-tools-1.0.tar.gz
+# this file differs with the one from cvs.pld.org.pl
+#Source0:	ftp://freeware.sgi.com/source/gnome-doc-tools/gnome-doc-tools-1.0.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 URL:		http://freeware.sgi.com/cd-2/relnotes/gnome-doc-tools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -28,7 +30,7 @@ GNOME Documentation Project ma kilka narzêdzi, skryptów i plików
 potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %prep
-%setup -q -n %{name}-%{version}-1
+%setup -q
 
 %build
 rm -f missing
