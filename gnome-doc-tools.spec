@@ -30,8 +30,8 @@ potrzebnych do tworzenia dokumentacji dla GNOME.
 %build
 rm -f missing
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure
 perl -pi -e "s@%{_libdir}/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docbook/dsssl-stylesheets/@g" *.dsl
 
