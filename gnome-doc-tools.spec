@@ -2,7 +2,7 @@ Summary:	Extra tools for GDP members
 Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
 Name:		gnome-doc-tools
 Version:	1.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Text
 Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
@@ -29,7 +29,7 @@ potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
@@ -45,11 +45,25 @@ install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customiz
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%triggerpostun -- %{name} < 1.0-3
+if ! grep -q /etc/sgml/gnome-customization-%{version}-%{release}.cat /etc/sgml/catalog ; then
+	/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+fi
+
+%pre
+if [ -L %{_datadir}/sgml/docbook/dsssl-stylesheets ] ; then
+	rm -rf %{_datadir}/sgml/docbook/dsssl-stylesheets
+fi
+
 %post
-/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+if ! grep -q /etc/sgml/gnome-customization-%{version}-%{release}.cat /etc/sgml/catalog ; then
+	/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+fi
 
 %postun
-/usr/bin/install-catalog --remove /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+if [ "$1" = 0 ]; then
+	/usr/bin/install-catalog --remove /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+fi
 
 %files
 %defattr(644,root,root,755)
