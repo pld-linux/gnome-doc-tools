@@ -2,7 +2,7 @@ Summary:	Extra tools for GDP members
 Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
 Name:		gnome-doc-tools
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Text
 Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
@@ -46,10 +46,10 @@ install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customiz
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+/usr/bin/install-catalog --add /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
 
 %postun
-/usr/bin/install-catalog --remove /etc/sgml/gnome-customization-%{version}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
+/usr/bin/install-catalog --remove /etc/sgml/gnome-customization-%{version}-%{release}.cat %{_datadir}/sgml/docbook/gnome-customization-%{version}/png-support.cat > /dev/null
 
 %files
 %defattr(644,root,root,755)
