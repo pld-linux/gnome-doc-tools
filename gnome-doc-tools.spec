@@ -2,7 +2,7 @@ Summary:	Extra tools for GDP members
 Name:		gnome-doc-tools
 Version:	1.0
 Release:	1
-Copyright:	2000 Red Hat, Inc.
+License:	2000 Red Hat, Inc.
 Prereq:		sgml-common
 Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
 Group:		Applications/Text
