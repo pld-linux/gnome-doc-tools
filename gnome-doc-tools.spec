@@ -11,7 +11,7 @@ Group:		Applications/Text
 # this file differs with the one from cvs.pld.org.pl
 #Source0:	ftp://freeware.sgi.com/source/gnome-doc-tools/gnome-doc-tools-1.0.tar.gz
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5: 2d8dea2fbbc93117f13d09b8a4734563
+# Source0-md5:	2d8dea2fbbc93117f13d09b8a4734563
 URL:		http://freeware.sgi.com/cd-2/relnotes/gnome-doc-tools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
