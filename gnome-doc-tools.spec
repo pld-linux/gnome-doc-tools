@@ -6,6 +6,7 @@ Release:	1
 License:	2000 Red Hat, Inc.
 Group:		Applications/Text
 Group(de):	Applikationen/Text
+Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
 URL:		http://people.redhat.com/dcm/software.html
