@@ -27,7 +27,7 @@ potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %build
 %configure2_13
-perl -pi -e "s@/usr/lib/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docbook/dsssl-stylesheets/@g" *.dsl
+perl -pi -e "s@%{_libdir}/sgml/stylesheets/nwalsh-modular/@%{_datadir}/sgml/docbook/dsssl-stylesheets/@g" *.dsl
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,7 +36,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customization-%{version
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install *.dtd *.cat *.dsl $RPM_BUILD_ROOT%{_datadir}/sgml/docbook/gnome-customization-%{version}
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
