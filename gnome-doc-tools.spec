@@ -28,8 +28,7 @@ GNOME Documentation Project ma kilka narzêdzi, skryptów i plików
 potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %prep
-#%setup -q
-%setup -q -n %{name}-%{version}-1
+%setup -q
 
 %build
 rm -f missing
