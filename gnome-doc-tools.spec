@@ -5,12 +5,15 @@ Version:	1.0
 Release:	5
 License:	GPL
 Group:		Applications/Text
-Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
-URL:		http://people.redhat.com/dcm/software.html
+# dead
+#Source0:	http://people.redhat.com/dcm/%{name}-%{version}.tar.gz
+#URL:		http://people.redhat.com/dcm/software.html
+Source0:	ftp://freeware.sgi.com/source/gnome-doc-tools/gnome-doc-tools-1.0.tar.gz
+URL:		http://freeware.sgi.com/cd-2/relnotes/gnome-doc-tools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
-Requires:	docbook-dtd31-sgml
 Requires:	docbook-dtd30-sgml
+Requires:	docbook-dtd31-sgml
 Prereq:		sgml-common
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
