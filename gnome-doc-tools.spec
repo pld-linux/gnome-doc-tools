@@ -2,7 +2,7 @@ Summary:	Extra tools for GDP members
 Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
 Name:		gnome-doc-tools
 Version:	1.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Text
 # dead
