@@ -15,6 +15,7 @@ Source0:	%{name}-%{version}.tar.gz
 URL:		http://freeware.sgi.com/cd-2/relnotes/gnome-doc-tools.html
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	sgml-common
 Requires:	docbook-dtd30-sgml
 Requires:	docbook-dtd31-sgml
 Prereq:		sgml-common
