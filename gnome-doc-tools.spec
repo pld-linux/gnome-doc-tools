@@ -1,5 +1,5 @@
 Summary:	Extra tools for GDP members
-Summary(pl):	Dodatkowe narzêdzia dla cz³onków GDP
+Summary(pl.UTF-8):   Dodatkowe narzÄ™dzia dla czÅ‚onkÃ³w GDP
 Name:		gnome-doc-tools
 Version:	1.0
 Release:	6
@@ -27,8 +27,8 @@ Obsoletes:	docbook-gnome-dtd10-sgml
 The GNOME Documentation Project has a few tools, scripts and files
 necessary for creating documentation for GNOME.
 
-%description -l pl
-GNOME Documentation Project ma kilka narzêdzi, skryptów i plików
+%description -l pl.UTF-8
+GNOME Documentation Project ma kilka narzÄ™dzi, skryptÃ³w i plikÃ³w
 potrzebnych do tworzenia dokumentacji dla GNOME.
 
 %prep
