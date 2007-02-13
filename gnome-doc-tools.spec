@@ -1,5 +1,5 @@
 Summary:	Extra tools for GDP members
-Summary(pl.UTF-8):   Dodatkowe narzędzia dla członków GDP
+Summary(pl.UTF-8):	Dodatkowe narzędzia dla członków GDP
 Name:		gnome-doc-tools
 Version:	1.0
 Release:	6
